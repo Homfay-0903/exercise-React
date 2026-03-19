@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Child from "./Child";
+import BrotherA from "./BrotherA"
+import BrotherB from "./BrotherB";
 
 const Parent = () => {
     const [inputMessage, setInputMessage] = useState('')
     const [isVisible, setIsVisible] = useState(true)
+    const [number, setNumber] = useState('')
 
     const handleChildClick = () => {
         console.log('子组件按钮被点击')
@@ -16,6 +19,9 @@ const Parent = () => {
     }
     const resetVisibility = () => {
         setIsVisible(true)
+    }
+    const handleNumberIuput = (newNumber: string) => {
+        setNumber(newNumber)
     }
 
 
@@ -33,6 +39,10 @@ const Parent = () => {
                 isVisible={isVisible}
                 resetVisible={resetVisibility}
             ></Child>
+
+            <hr />
+            <BrotherA inputNumber={number} onChangeNumber={handleNumberIuput}></BrotherA>
+            <BrotherB showNumber={number}></BrotherB>
         </div>
     )
 }
