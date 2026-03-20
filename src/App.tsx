@@ -6,6 +6,7 @@ import RefParent from './components/RefParent'
 import { CartProvider, useCart } from './context/CartContext'
 import GoodsList from './components/GoodsList'
 import Cart from './components/Cart'
+import LoginParent from './components/LoginParent'
 import './App.css'
 
 const TotalPriceDisplay = () => {
@@ -50,6 +51,8 @@ function App() {
           <TotalPriceDisplay></TotalPriceDisplay>
         </div>
       </CartProvider>
+      <hr />
+      <LoginParent></LoginParent>
     </ThemeProvider>
 
   )
