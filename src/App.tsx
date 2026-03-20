@@ -2,6 +2,7 @@ import Parent from './components/Parent'
 import { ThemeProvider } from './context/ThemeContext'
 import Level1 from './components/Level1'
 import TodoParent from './components/TodoParent'
+import RefParent from './components/RefParent'
 import './App.css'
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
       <hr />
       <div>
         <TodoParent></TodoParent>
+      </div>
+      <hr />
+      <div>
+        <RefParent></RefParent>
       </div>
     </ThemeProvider>
 

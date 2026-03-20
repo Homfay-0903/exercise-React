@@ -4,15 +4,18 @@ interface BrotherBProps {
 
 const BrotherB = ({ showNumber }: BrotherBProps) => {
     let content: React.ReactNode
-    let squreNumber = Number(showNumber.trim())
+    const trimmed = showNumber.trim()
 
-    if (!squreNumber) {
-        content = <p>please input number first</p>
-    } else if (isNaN(squreNumber)) {
-        content = <p>请输入有效数字</p>
+    if (trimmed === '') {
+        content = <span style={{ color: 'gray' }}>请输入数字</span>
     } else {
-        const res = squreNumber * squreNumber
-        content = <p>the res is: {res}</p>
+        const num = Number(trimmed)
+        if (isNaN(num)) {
+            content = <span style={{ color: 'red' }}>请输入有效数字</span>
+        } else {
+            const square = num * num
+            content = <span>平方: {square}</span>
+        }
     }
 
     return (
