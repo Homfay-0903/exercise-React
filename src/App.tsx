@@ -7,6 +7,10 @@ import { CartProvider, useCart } from './context/CartContext'
 import GoodsList from './components/GoodsList'
 import Cart from './components/Cart'
 import LoginParent from './components/LoginParent'
+import { UserProvider } from './context/UserContext'
+import Header from './components/Header'
+import Content from './components/Content'
+import LoginForm2 from './components/LoginForm2'
 import './App.css'
 
 const TotalPriceDisplay = () => {
@@ -53,6 +57,12 @@ function App() {
       </CartProvider>
       <hr />
       <LoginParent></LoginParent>
+      <hr />
+      <UserProvider>
+        <LoginForm2></LoginForm2>
+        <Header></Header>
+        <Content></Content>
+      </UserProvider>
     </ThemeProvider>
 
   )
